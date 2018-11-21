@@ -1,6 +1,6 @@
 {
-  "name": "o-table",
-  "description": "FT-branded tables",
+  "name": "o-audio",
+  "description": "FT-branded audio elements",
   "private": true,
   "scripts": {
     "heroku-postbuild": "npx origami-build-tools install && npm i serve && npx origami-build-tools demo",
