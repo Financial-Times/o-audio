@@ -68,14 +68,12 @@ describe("OAudio", () => {
 			proclaim.equal(action, "listened");
 		});
 
-		it('when the page unloads', () => {
+		it('when a given event on the window is fired', () => {
 			const events = oTracking.start();
 			new OAudio(stubAudioEl, {
-				dispatchListenedEventOnUnload: true
+				unloadEventName: 'unload-event'
 			});
-
-			const unloadEventName = 'onbeforeunload' in window ? 'beforeunload' : 'unload';
-			window.dispatchEvent(new Event(unloadEventName));
+			window.dispatchEvent(new Event('unload-event'));
 			proclaim.lengthEquals(events, 1);
 			const { action } = events[0];
 			proclaim.equal(action, "listened");

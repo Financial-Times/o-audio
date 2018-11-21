@@ -13,13 +13,14 @@ class OAudio {
 		}
 		this.oAudioEl = oAudioEl;
 		this.options = Object.assign({}, {
+			unloadEventName: 'onbeforeunload' in window ? 'beforeunload' : 'unload'
 		}, opts || OAudio.getDataAttributes(oAudioEl));
 
 		this.tracking = new Tracking(oAudioEl, this.options);
 
-		if (this.options.dispatchListenedEventOnUnload !== undefined) {
+		if (this.options.unloadEventName) {
 			window.addEventListener(
-				'onbeforeunload' in window ? 'beforeunload' : 'unload',
+				this.options.unloadEventName,
 				() => this.tracking.dispatchListenedEvent()
 			);
 		}
