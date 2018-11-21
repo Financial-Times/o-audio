@@ -5,7 +5,7 @@
   "scripts": {
     "heroku-postbuild": "npx origami-build-tools install && npm i serve && npx origami-build-tools demo",
     "start": "serve -l $PORT"
-  }
+  },
   "devDependencies": {
     "eslint-config-origami-component": "^1.0.0"
   }
