@@ -98,7 +98,7 @@ describe('Tracking' , () => {
 	});
 
 	describe('progress event', () => {
-		;[
+		[
 			{ currentTime: 10, progressPoint: 10 },
 			{ currentTime: 30, progressPoint: 25 },
 			{ currentTime: 61, progressPoint: 50 },
@@ -109,7 +109,7 @@ describe('Tracking' , () => {
 				const events = oTracking.start();
 				const stubAudioEl = initAudioElement();
 				initTracking(stubAudioEl, { contentId });
-	
+
 				stubAudioEl.currentTime = currentTime;
 				stubAudioEl.dispatchEvent(new Event('timeupdate'));
 				proclaim.deepEqual(events[0], {
