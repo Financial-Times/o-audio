@@ -99,6 +99,37 @@ describe('Tracking' , () => {
 				contentId
 			});
 		});
+
+		it('sets error property on events if audio element has an error prorperty', () => {
+			const events = oTracking.start();
+			const stubAudioEl = initAudioElementWithMetadata();
+			const error = {
+				code: 4,
+				message: 'MEDIA_ELEMENT_ERROR: Empty src attribute',
+			};
+
+			initTracking(stubAudioEl, { contentId });
+			mockMetadata(stubAudioEl);
+
+
+			stubAudioEl.currentTime = 18;
+			stubAudioEl.error = error;
+			stubAudioEl.dispatchEvent(new Event('error'));
+
+			proclaim.deepEqual(events[0], {
+				category: 'audio',
+				action: 'error',
+				duration: 120,
+				progress: 15,
+				error: {
+					code: error.code,
+					message: error.message,
+					currentTime: 18,
+					src: undefined
+				},
+				contentId
+			});
+		});
 	});
 
 	describe('progress event', () => {
