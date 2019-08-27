@@ -139,7 +139,7 @@ describe('Tracking' , () => {
 			{ currentTime: 30, progressPoint: 25 },
 			{ currentTime: 61, progressPoint: 50 },
 			{ currentTime: 91, progressPoint: 75 },
-			{ currentTime: 119, progressPoint: 100 }
+			{ currentTime: 120, progressPoint: 100 }
 		].forEach(({ currentTime, progressPoint }) => {
 			it(`emits a progress event at ${progressPoint}%`, () => {
 				const events = oTracking.start();

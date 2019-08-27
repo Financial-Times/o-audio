@@ -29,13 +29,13 @@ const progressWindows = [
 	[83, 87, 85],
 	[88, 92, 90],
 	[93, 97, 95],
-	[98, 100, 100]
+	[100, 100, 100]
 ];
 
 function getProgressPoint(progress) {
 	// eslint-disable-next-line no-unused-vars
 	const [lower, upper, point] = progressWindows.find(([lower, upper]) => {
-		return progress >= lower && progress < upper;
+		return progress >= lower && progress <= upper;
 	}) || [0, 0, 0];
 
 	return point;
