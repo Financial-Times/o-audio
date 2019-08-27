@@ -161,6 +161,7 @@ describe('Tracking' , () => {
 
 
 		it('only emits a progress event when the current time is a known progress point', () => {
+			// eslint-disable-next-line no-unused-vars
 			const [progressAt0, ...events] = oTracking.start();
 			const stubAudioEl = initAudioElement();
 			initTracking(stubAudioEl, { contentId });

@@ -28,15 +28,17 @@ const progressWindows = [
 	[73, 77, 75],
 	[83, 87, 85],
 	[88, 92, 90],
-	[93, 97, 95],
-	[100, 100, 100]
+	[93, 97, 95]
 ];
 
 function getProgressPoint(progress) {
+	if (progress === 0 || progress === 100) {
+		return progress;
+	}
 	// eslint-disable-next-line no-unused-vars
 	const [lower, upper, point] = progressWindows.find(([lower, upper]) => {
 		return progress >= lower && progress <= upper;
-	}) || [0, 0, 0];
+	}) || [];
 
 	return point;
 }
@@ -109,7 +111,7 @@ class AudioTracking {
 		}
 
 		const progressPoint = getProgressPoint(progress);
-		if (progressPoint !== this.lastTrackedProgressPoint && !this.audio.paused) {
+		if (progressPoint !== undefined && progressPoint !== this.lastTrackedProgressPoint && !this.audio.paused) {
 			this.lastTrackedProgressPoint = progressPoint;
 			// log as 'progress' to keep consistency with o-video
 			fireEvent('progress', this, { progress: progressPoint });
