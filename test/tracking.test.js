@@ -134,6 +134,7 @@ describe('Tracking' , () => {
 
 	describe('progress event', () => {
 		[
+			{ currentTime: 0, progressPoint: 0 },
 			{ currentTime: 10, progressPoint: 10 },
 			{ currentTime: 30, progressPoint: 25 },
 			{ currentTime: 61, progressPoint: 50 },
@@ -160,14 +161,13 @@ describe('Tracking' , () => {
 
 
 		it('only emits a progress event when the current time is a known progress point', () => {
-			const events = oTracking.start();
+			const [progressAt0, ...events] = oTracking.start();
 			const stubAudioEl = initAudioElement();
 			initTracking(stubAudioEl, { contentId });
 
 			// trigger timeupdate event at 15%
 			stubAudioEl.currentTime = 18;
 			stubAudioEl.dispatchEvent(new Event('timeupdate'));
-
 			proclaim.lengthEquals(events, 0);
 		});
 

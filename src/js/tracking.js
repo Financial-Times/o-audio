@@ -109,7 +109,7 @@ class AudioTracking {
 		}
 
 		const progressPoint = getProgressPoint(progress);
-		if (progressPoint && progressPoint !== this.lastTrackedProgressPoint && !this.audio.paused) {
+		if (progressPoint !== this.lastTrackedProgressPoint && !this.audio.paused) {
 			this.lastTrackedProgressPoint = progressPoint;
 			// log as 'progress' to keep consistency with o-video
 			fireEvent('progress', this, { progress: progressPoint });
