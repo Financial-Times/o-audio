@@ -64,7 +64,7 @@ const TRACKING_ATTRIBUTES = [
 	// The audio subtype ie. podcast, amy
 	'audioSubtype',
 
-	// A string to identify which player is being used. 
+	// A string to identify which player is being used.
 	// i.e. ft-audio-player
 	'playerType',
 
@@ -91,13 +91,9 @@ class AudioTracking {
 		this.trackingProperties = whitelistProps(trackingProperties);
 		this.audioLength = undefined;
 		this.lastTrackedProgressPoint = undefined;
-		this.amountListened = 0;
-		this.dateTimePlayStart = undefined;
 
 		this.delegate = new Delegate(audio);
 		this.delegate.on('loadedmetadata', this.extractMetadata.bind(this));
-		this.delegate.on('playing', this.startListeningTimer.bind(this));
-		this.delegate.on('pause', this.stopListeningTimer.bind(this));
 
 		this.attachListeners();
 		this.extractMetadata();
@@ -130,28 +126,6 @@ class AudioTracking {
 			// log as 'progress' to keep consistency with o-video
 			fireEvent('progress', this, { progress: progressPoint });
 		}
-	}
-
-	startListeningTimer () {
-		if (this.dateTimePlayStart === undefined) {
-			this.dateTimePlayStart = Date.now();
-		}
-	}
-
-	stopListeningTimer() {
-		if (this.dateTimePlayStart !== undefined) {
-			this.amountListened += Date.now() - this.dateTimePlayStart;
-			this.dateTimePlayStart = undefined;
-		}
-	}
-
-	dispatchListenedEvent() {
-		this.stopListeningTimer();
-		const amount = this.amountListened / 1000;
-		fireEvent('listened', this, {
-			amount: Number(amount.toFixed(2)),
-			amountPercentage: Number((amount / this.audioLength * 100).toFixed(2)),
-		});
 	}
 
 	destroy() {

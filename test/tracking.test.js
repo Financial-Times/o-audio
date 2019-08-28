@@ -209,30 +209,6 @@ describe('Tracking' , () => {
 		});
 	});
 
-	it('dispatches listened event with total amount listened', () => {
-		const events = oTracking.start();
-		const clock = sinon.useFakeTimers();
-		const stubAudioEl = initAudioElement();
-		const tracking = initTracking(stubAudioEl, { contentId });
-
-		stubAudioEl.dispatchEvent(new Event('playing'));
-		clock.tick(18000); // pretend 18s have passed by
-		stubAudioEl.dispatchEvent(new Event('pause'));
-
-		tracking.dispatchListenedEvent();
-		clock.restore();
-
-		proclaim.deepEqual(events[2], {
-			category: 'audio',
-			action: 'listened',
-			duration: 120,
-			amount: 18,
-			amountPercentage:15,
-			error: undefined,
-			contentId
-		});
-	});
-
 	it('removes event listeners when o-audio element is destroyed', () => {
 		const events = oTracking.start();
 		const stubAudioEl = initAudioElement();
