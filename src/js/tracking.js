@@ -54,9 +54,23 @@ const EVENTS = [
 ];
 
 const TRACKING_ATTRIBUTES = [
+	// The content id of the audio being played
 	'contentId',
+
+	// The content id of the article in which the audio is embedded
+	// Note: This can be the same as contentId
+	'rootContentId',
+
+	// The audio subtype ie. podcast, amy
 	'audioSubtype',
+
+	// A string to identify which player is being used. 
+	// i.e. ft-audio-player
 	'playerType',
+
+	// The the value of root ID when audio playback started.
+	// Required for the persistent player in the app so
+	// audio events can be linked back to the correct page:view event
 	'root_id',
 ];
 

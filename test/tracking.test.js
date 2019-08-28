@@ -249,7 +249,8 @@ describe('Tracking' , () => {
 		[
 			[ 'contentId', 'abc-123' ],
 			[ 'audioSubtype', 'podcast' ],
-			[ 'playerType', 'inline' ]
+			[ 'playerType', 'inline' ],
+			[ 'rootContentId', 'def-456' ]
 
 		].map(([ propName, propValue ]) =>
 			it(`includes ${propName} in the event detail`, () => {
