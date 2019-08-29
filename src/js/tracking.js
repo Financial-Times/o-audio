@@ -1,3 +1,4 @@
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["dispatchListenedEvent"] }] */
 import Delegate from 'ftdomdelegate';
 import * as Utils from 'o-utils';
 
@@ -126,6 +127,10 @@ class AudioTracking {
 			// log as 'progress' to keep consistency with o-video
 			fireEvent('progress', this, { progress: progressPoint });
 		}
+	}
+
+	dispatchListenedEvent () {
+		console.log('The "listened" event has been deprecated');
 	}
 
 	destroy() {
