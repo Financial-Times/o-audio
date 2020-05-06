@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+/* global proclaim sinon */
 import Tracking from './../src/js/tracking';
 import OTrackingCollector from './helpers/o-tracking-collector';
 
