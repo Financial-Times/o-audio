@@ -1,4 +1,4 @@
-o-audio 
+o-audio
 =================
 
 The FT audio player.
@@ -35,14 +35,14 @@ You must either construct an `o-audio` object or fire the `o.DOMContentLoaded` e
 #### Constructing an o-audio
 
 ```js
-const oAudio = require('o-audio');
+import oAudio from 'o-audio';
 oAudio.init();
 ```
 
 #### Firing an oDomContentLoaded event
 
 ```js
-require('o-audio');
+import 'o-audio';
 
 document.addEventListener('DOMContentLoaded', function() {
 	document.dispatchEvent(new CustomEvent('o.DOMContentLoaded'));
