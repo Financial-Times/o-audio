@@ -1,4 +1,4 @@
-o-audio [![Circle CI](https://circleci.com/gh/Financial-Times/o-audio/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-audio/tree/master)
+o-audio 
 =================
 
 The FT audio player.
