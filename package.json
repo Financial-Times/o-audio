@@ -1,5 +1,5 @@
 {
-    "name": "o-audio",
+    "name": "@financial-times/o-audio",
     "description": "Financial Times audio player",
     "main": "main.js",
     "devDependencies": {
