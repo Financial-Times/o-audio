@@ -10,11 +10,11 @@
         "stylelint-config-origami-component": "^1.0.4"
     },
     "peerDependencies": {
-        "@financial-times/o-utils": "^100.0.0-5",
-        "ftdomdelegate": "^100.0.0-5"
+        "@financial-times/o-utils": "^100.0.0-6",
+        "ftdomdelegate": "^100.0.0-6"
     },
     "publishConfig": {
         "registry": "http://localhost:4873"
     },
-    "version": "100.0.0-5"
+    "version": "100.0.0-6"
 }
