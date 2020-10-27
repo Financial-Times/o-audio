@@ -1,5 +1,6 @@
 {
     "name": "@financial-times/o-audio",
+    "version": "100.0.0-7",
     "description": "Financial Times audio player",
     "browser": "main.js",
     "devDependencies": {
@@ -15,6 +16,5 @@
     },
     "publishConfig": {
         "registry": "http://localhost:4873"
-    },
-    "version": "100.0.0-7"
+    }
 }
