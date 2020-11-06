@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/o-audio",
-  "version": "100.0.0-12",
+  "version": "100.0.0-13",
   "description": "Financial Times audio player",
   "keywords": [],
   "homepage": "https://github.com/Financial-Times/o-audio#readme",
@@ -30,8 +30,8 @@
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
-    "@financial-times/o-utils": "^100.0.0-12",
-    "ftdomdelegate": "^100.0.0-12"
+    "@financial-times/o-utils": "^100.0.0-13",
+    "ftdomdelegate": "^100.0.0-13"
   },
   "publishConfig": {
     "registry": "https://origami-npm-registry-prototype.herokuapp.com"
