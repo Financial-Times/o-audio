@@ -40,8 +40,8 @@ class OAudio {
 		}
 		return Object.keys(oAudioEl.dataset).reduce((options, key) => {
 
-			// Ignore data-o-component
-			if (key === 'oComponent') {
+			// Ignore keys which are not in the component's namespace
+			if (!key.match(/^oAudio(\w)(\w+)$/)) {
 				return options;
 			}
 
