@@ -44,8 +44,8 @@ Each audio event is inserted into the `Audio` table in redshift, which in turn p
 | System/module  | Responsibility | Owned by | Useful reference |
 | ------------- | ------------- | ------------- |  ------------- |
 | o-audio  | Publishes audio event  | Customer Products | - |
-| spoor-enrichment  | Enriches event with data about the audio (title etc.)  | Customer Products | [transforms/audio.js](https://github.com/Financial-Times/spoor-enrichment/blob/master/server/transforms/audio.js)
-| spoor-stream-processor  | Maps fields in the event to columns in the audio table  | Data Platform | [mappings.json](https://github.com/Financial-Times/data-spoor-stream-processor/blob/master/config/mappings.json)
+| spoor-enrichment  | Enriches event with data about the audio (title etc.)  | Customer Products | [transforms/audio.js](https://github.com/Financial-Times/spoor-enrichment/blob/HEAD/server/transforms/audio.js)
+| spoor-stream-processor  | Maps fields in the event to columns in the audio table  | Data Platform | [mappings.json](https://github.com/Financial-Times/data-spoor-stream-processor/blob/HEAD/config/mappings.json)
 | Audio table  | Stores the audio event  | Data Platform | - |
 | Bigquery/chartio  | Reporting on audio consumption  | Business Intelligence | [Audio dashboard](https://chartio.com/financialtimes/dashboard/356574/link_sharing/4847c824f70e33da577105929b98a7f6f6d0a887ce4bb697a99517febcf19fcb/) |
 
