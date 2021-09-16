@@ -1,5 +1,11 @@
 # o-audio
 
+***
+
+**This component has moved to the [Origami Component System](https://github.com/Financial-Times/origami).**
+
+***
+
 The FT audio player.
 
 - [Usage](#usage)
